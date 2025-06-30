@@ -7,7 +7,7 @@ import pandas as pd
 def coletar_tweets(palavra_chave, max_tweets=100):
     tweets = []
     for i, tweet in enumerate(sntwitter.TwitterSearchScraper(palavra_chave).get_items()):
-        if i >= max_tweets:
+        if i >= max_tweetss:
             break
         tweets.append([tweet.date, tweet.content, tweet.user.username])
     df = pd.DataFrame(tweets, columns=['Data', 'Texto', 'Usuário'])
